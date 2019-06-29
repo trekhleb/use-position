@@ -17,9 +17,12 @@
     "position"
   ],
   "author": "Oleksii Trekhleb (https://www.linkedin.com/in/trekhleb/)",
-  "license": "MIT License",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/trekhleb/use-position/issues"
   },
-  "homepage": "https://github.com/trekhleb/use-position#readme"
+  "homepage": "https://github.com/trekhleb/use-position#readme",
+  "devDependencies": {
+    "react": "^16.8.6"
+  }
 }
