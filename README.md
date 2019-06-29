@@ -16,7 +16,7 @@ yarn add use-position
 
 ## Usage
 
-Import package:
+Import hook:
 
 ```javascript
 import { usePosition } from 'use-position';
