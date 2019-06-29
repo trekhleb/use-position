@@ -1,6 +1,5 @@
 import {useState, useEffect} from 'react';
 
-// @see: https://developer.mozilla.org/en-US/docs/Web/API/PositionOptions
 const settings = {
   enableHighAccuracy: false,
   timeout: Infinity,
@@ -31,15 +30,14 @@ export const usePosition = (watch = false) => {
       return;
     }
 
+    let watcher = null;
     if (watch) {
-      // @see: https://developer.mozilla.org/en-US/docs/Web/API/Geolocation/watchPosition
-      const watcher = geo.watchPosition(onChange, onError, settings);
+      watcher = geo.watchPosition(onChange, onError, settings);
     } else {
-      // @see: https://developer.mozilla.org/en-US/docs/Web/API/Geolocation/getCurrentPosition
       geo.getCurrentPosition(onChange, onError, settings);
     }
     
-    return () => watch ? geo.clearWatch(watcher) : null;
+    return () => watcher && geo.clearWatch(watcher);
   }, [settings]);
 
   return { ...position, error };
