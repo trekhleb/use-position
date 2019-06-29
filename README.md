@@ -1,7 +1,7 @@
 # React hook for following a browser geolocation
 
 [![Build Status](https://travis-ci.org/trekhleb/use-position.svg?branch=master)](https://travis-ci.org/trekhleb/use-position)
-[![npm version](https://badge.fury.io/js/use-position.svg)](https://badge.fury.io/js/use-position)
+![npm](https://img.shields.io/npm/v/use-position.svg)
 
 React hook `usePosition()` allows you to fetch client's browser geolocation and/or subscribe to all further geolocation changes.
 
