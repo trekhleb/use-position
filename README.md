@@ -24,7 +24,7 @@ Import the hook:
 import { usePosition } from 'use-position';
 ```
 
-### Fetching client location once
+### Fetching client location
 
 ```javascript
 const { latitude, longitude, timestamp, accuracy, error } = usePosition();
