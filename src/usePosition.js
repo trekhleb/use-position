@@ -26,7 +26,7 @@ export const usePosition = (watch = false) => {
   useEffect(() => {
     const geo = navigator.geolocation;
     if (!geo) {
-      setError(new Error('Geolocation is not supported'));
+      setError('Geolocation is not supported');
       return;
     }
 

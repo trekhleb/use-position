@@ -4,7 +4,7 @@
   "description": "React hook for fetching and following browser location",
   "main": "dist/usePosition.min.js",
   "scripts": {
-    "test": "echo \"Tests are in progress\"",
+    "test": "jest --coverage",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
     "build": "rollup -c -o dist/usePosition.min.js",
@@ -42,7 +42,9 @@
     "@storybook/react": "^5.1.9",
     "babel-loader": "^8.0.6",
     "gh-pages": "^2.0.1",
+    "jest": "^24.8.0",
     "react": "^16.8.0",
+    "react-test-renderer": "^16.8.6",
     "rollup": "^1.16.3",
     "rollup-plugin-babel": "^4.3.3",
     "rollup-plugin-uglify": "^6.0.2"
