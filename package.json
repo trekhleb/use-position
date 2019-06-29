@@ -7,7 +7,9 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
-    "build": "rollup -c -o dist/usePosition.min.js"
+    "build": "rollup -c -o dist/usePosition.min.js",
+    "prepublishOnly": "yarn run build",
+    "publish": "npm publish"
   },
   "repository": {
     "type": "git",
@@ -34,10 +36,16 @@
     "@storybook/addons": "^5.1.9",
     "@storybook/react": "^5.1.9",
     "babel-loader": "^8.0.6",
-    "react": "^16.8.6",
+    "react": "^16.8.0",
     "rollup": "^1.16.3",
     "rollup-plugin-babel": "^4.3.3",
     "rollup-plugin-uglify": "^6.0.2"
   },
-  "dependencies": {}
+  "peerDependencies": {
+    "react": "^16.8.0"
+  },
+  "dependencies": {},
+  "files": [
+    "dist/*"
+  ]
 }
