@@ -1,22 +1,24 @@
 import {useState, useEffect} from 'react';
 
-const watcherSettings = {
+const settings = {
   enableHighAccuracy: false,
 };
 
-export const usePosition = (settings = watcherSettings) => {
-  const [pos, setPos] = useState({});
-  const [err, setErr] = useState(null);
+export const usePosition = (watch = false) => {
+  const [position, setPosition] = useState({});
+  const [error, setError] = useState(null);
 
-  const onChange = ({coords}) => {
-    setPos({
-      lat: coords.latitude,
-      lon: coords.longitude,
+  const onChange = (position) => {
+    setPosition({
+      latitude: position.coords.latitude,
+      longitude: position.coords.longitude,
+      accuracy: position.coords.accuracy,
+      timestamp: position.timestamp,
     });
   };
 
   const onError = (error) => {
-    setErr(error);
+    setError(error.message);
   };
 
   useEffect(() => {
@@ -27,14 +29,17 @@ export const usePosition = (settings = watcherSettings) => {
       return;
     }
 
-    const watcher = geo.watchPosition(onChange, onError, settings);
-
-    return () => geo.clearWatch(watcher);
+    if (watch) {
+      const watcher = geo.watchPosition(onChange, onError, settings);
+    } else {
+      geo.getCurrentPosition(onChange, onError, settings);
+    }
+    
+    return () => watch ? geo.clearWatch(watcher) : null;
   }, [settings]);
 
   return {
-    lat: pos.lat,
-    lon: pos.lon,
-    err,
+    ...position,
+    error,
   };
 };

@@ -4,7 +4,9 @@
   "description": "React hook for fetching and following browser location",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
   },
   "repository": {
     "type": "git",
@@ -23,6 +25,13 @@
   },
   "homepage": "https://github.com/trekhleb/use-position#readme",
   "devDependencies": {
+    "@babel/core": "^7.4.5",
+    "@storybook/addon-actions": "^5.1.9",
+    "@storybook/addon-links": "^5.1.9",
+    "@storybook/addons": "^5.1.9",
+    "@storybook/react": "^5.1.9",
+    "babel-loader": "^8.0.6",
     "react": "^16.8.6"
-  }
+  },
+  "dependencies": {}
 }
