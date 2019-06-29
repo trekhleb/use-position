@@ -72,6 +72,10 @@ export const Demo = () => {
 ### `usePosition()` input
 
 - `watch: boolean` - set it to `true` to follow the location.
+- `settings: object` - [position options](https://developer.mozilla.org/en-US/docs/Web/API/PositionOptions)
+  - `settings.enableHighAccuracy` - (default `false`),
+  - `settings.timeout` - (default `Infinity`),
+  - `settings.maximumAge` - (default `0`).
 
 ### `usePosition()` output
 
