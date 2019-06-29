@@ -8,18 +8,18 @@
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
     "build": "rollup -c -o dist/usePosition.min.js",
-    "prepublishOnly": "yarn run build",
-    "pub": "npm publish"
+    "prepublishOnly": "yarn run build"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/trekhleb/use-position.git"
   },
   "keywords": [
-    "React",
+    "react",
     "hook",
     "location",
-    "position"
+    "position",
+    "navigation"
   ],
   "author": "Oleksii Trekhleb (https://www.linkedin.com/in/trekhleb/)",
   "license": "MIT",
