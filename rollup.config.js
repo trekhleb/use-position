@@ -1,4 +1,4 @@
-import { uglify } from 'rollup-plugin-uglify';
+import {uglify} from 'rollup-plugin-uglify';
 import babel from 'rollup-plugin-babel';
 
 const config = {
@@ -7,13 +7,13 @@ const config = {
     format: 'umd',
     name: 'dist/usePosition.js',
     globals: {
-      react: "React",
-    }
+      react: 'React',
+    },
   },
   external: ['react'],
   plugins: [
     babel({
-      exclude: "node_modules/**"
+      exclude: 'node_modules/**',
     }),
     uglify(),
   ],
