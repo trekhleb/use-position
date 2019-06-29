@@ -1,4 +1,4 @@
-# React hook for fetching and following a browser location
+# React hook for following a browser location
 
 ## Installation
 
