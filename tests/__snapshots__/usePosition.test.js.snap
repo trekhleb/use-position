@@ -39,7 +39,7 @@ exports[`usePosition should return error if navigator is not supported 1`] = `
   accuracy: 
   <br />
   error: 
-  User denied Geolocation
+  Geolocation is not supported
 </code>
 `;
 

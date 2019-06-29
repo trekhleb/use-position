@@ -79,7 +79,7 @@ describe('usePosition', () => {
   });
 
   it('should return error if navigator is not supported', () => {
-    global.navigator = null; 
+    global.navigator.geolocation = null; 
     let testRenderer;
     act(() => {
       testRenderer = renderer.create(<Demo />);
