@@ -1,4 +1,4 @@
-# React hook for following a browser location
+# React hook `usePosition()` for following a browser geolocation
 
 ## Installation
 

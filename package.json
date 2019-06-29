@@ -19,7 +19,9 @@
     "hook",
     "location",
     "position",
-    "navigation"
+    "navigation",
+    "geolocation",
+    "position"
   ],
   "author": "Oleksii Trekhleb (https://www.linkedin.com/in/trekhleb/)",
   "license": "MIT",
