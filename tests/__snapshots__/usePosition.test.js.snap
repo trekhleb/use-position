@@ -73,6 +73,24 @@ exports[`usePosition should return error while watching 1`] = `
 </code>
 `;
 
+exports[`usePosition should return latitude and longitude even if watch is undefined 1`] = `
+<code>
+  latitude: 
+  52.3172414
+  <br />
+  longitude: 
+  4.8717809
+  <br />
+  timestamp: 
+  1561815013194
+  <br />
+  accuracy: 
+  24m
+  <br />
+  error: 
+</code>
+`;
+
 exports[`usePosition should return latitude and longitude while fetching 1`] = `
 <code>
   latitude: 

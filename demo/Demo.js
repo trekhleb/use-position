@@ -1,7 +1,7 @@
 import React from 'react';
 import { usePosition } from '../src/usePosition';
 
-export const Demo = ({watch = false}) => {
+export const Demo = ({watch}) => {
   const { latitude, longitude, timestamp, accuracy, error } = usePosition(watch);
 
   return (

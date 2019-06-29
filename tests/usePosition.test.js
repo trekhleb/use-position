@@ -112,4 +112,14 @@ describe('usePosition', () => {
     });
     expect(global.navigator.geolocation.clearWatch).not.toHaveBeenCalled();
   });
+
+  it('should return latitude and longitude even if watch is undefined', () => {    
+    global.navigator.geolocation = mockGeolocation;
+    let testRenderer;
+    act(() => {
+      testRenderer = renderer.create(<Demo watch={undefined} />);
+    });
+    const tree = testRenderer.toJSON();
+    expect(tree).toMatchSnapshot();
+  });
 });
