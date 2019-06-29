@@ -26,23 +26,21 @@ export const usePosition = (watch = false) => {
 
   useEffect(() => {
     const geo = navigator.geolocation;
-
     if (!geo) {
       setError(new Error('Geolocation is not supported'));
       return;
     }
 
     if (watch) {
+      // @see: https://developer.mozilla.org/en-US/docs/Web/API/Geolocation/watchPosition
       const watcher = geo.watchPosition(onChange, onError, settings);
     } else {
+      // @see: https://developer.mozilla.org/en-US/docs/Web/API/Geolocation/getCurrentPosition
       geo.getCurrentPosition(onChange, onError, settings);
     }
     
     return () => watch ? geo.clearWatch(watcher) : null;
   }, [settings]);
 
-  return {
-    ...position,
-    error,
-  };
+  return { ...position, error };
 };
