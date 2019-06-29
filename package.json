@@ -1,0 +1,25 @@
+{
+  "name": "use-position",
+  "version": "0.0.1",
+  "description": "React hook for fetching and following browser location",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/trekhleb/use-position.git"
+  },
+  "keywords": [
+    "React",
+    "hook",
+    "location",
+    "position"
+  ],
+  "author": "Oleksii Trekhleb (https://www.linkedin.com/in/trekhleb/)",
+  "license": "MIT License",
+  "bugs": {
+    "url": "https://github.com/trekhleb/use-position/issues"
+  },
+  "homepage": "https://github.com/trekhleb/use-position#readme"
+}
