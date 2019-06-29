@@ -46,6 +46,14 @@ In this case if browser detects geolocation change the `latitude`, `longitude` a
 const { latitude, longitude, timestamp, accuracy, error } = usePosition(true);
 ```
 
+### Following client location with highest accuracy
+
+In this case if browser detects geolocation change the `latitude`, `longitude` and `timestamp` values will be updated.
+
+```javascript
+const { latitude, longitude, timestamp, accuracy, error } = usePosition(true, {enableHighAccuracy: true});
+```
+
 ### Full example
 
 ```javascript
@@ -73,9 +81,9 @@ export const Demo = () => {
 
 - `watch: boolean` - set it to `true` to follow the location.
 - `settings: object` - [position options](https://developer.mozilla.org/en-US/docs/Web/API/PositionOptions)
-  - `settings.enableHighAccuracy` - (default `false`),
-  - `settings.timeout` - (default `Infinity`),
-  - `settings.maximumAge` - (default `0`).
+  - `settings.enableHighAccuracy` - indicates the application would like to receive the most accurate results (default `false`),
+  - `settings.timeout` - maximum length of time (in milliseconds) the device is allowed to take in order to return a position (default `Infinity`),
+  - `settings.maximumAge` - the maximum age in milliseconds of a possible cached position that is acceptable to return (default `0`).
 
 ### `usePosition()` output
 
