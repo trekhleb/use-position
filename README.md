@@ -3,7 +3,7 @@
 ## Installation
 
 ```bash
-npm i --save
+npm i use-position --save
 ```
 
 or
@@ -18,20 +18,6 @@ Import package:
 
 ```javascript
 import { usePosition } from 'use-position';
-
-export const Demo = () => {
-  const { latitude, longitude, timestamp, accuracy, error } = usePosition(watch);
-
-  return (
-    <code>
-      latitude: {latitude}<br/>
-      longitude: {longitude}<br/>
-      timestamp: {timestamp}<br/>
-      accuracy: {accuracy && `${accuracy}m`}<br/>
-      error: {error}
-    </code>
-  );
-};
 ```
 
 Fetch location from the hook:
