@@ -3,5 +3,5 @@ import { storiesOf } from '@storybook/react';
 import { Demo } from '../demo/Demo';
 
 storiesOf('usePosition', module)
-  .add('Fetching once', () => <Demo />)
+  .add('Fetching', () => <Demo />)
   .add('Watching', () => <Demo watch />);

@@ -1,19 +1,22 @@
 import {useState, useEffect} from 'react';
 
+// @see: https://developer.mozilla.org/en-US/docs/Web/API/PositionOptions
 const settings = {
   enableHighAccuracy: false,
+  timeout: Infinity,
+  maximumAge: 0,
 };
 
 export const usePosition = (watch = false) => {
   const [position, setPosition] = useState({});
   const [error, setError] = useState(null);
 
-  const onChange = (position) => {
+  const onChange = ({coords, timestamp}) => {
     setPosition({
-      latitude: position.coords.latitude,
-      longitude: position.coords.longitude,
-      accuracy: position.coords.accuracy,
-      timestamp: position.timestamp,
+      latitude: coords.latitude,
+      longitude: coords.longitude,
+      accuracy: coords.accuracy,
+      timestamp,
     });
   };
 
@@ -25,7 +28,7 @@ export const usePosition = (watch = false) => {
     const geo = navigator.geolocation;
 
     if (!geo) {
-      setErr(new Error('Geolocation is not supported by this browser'));
+      setError(new Error('Geolocation is not supported'));
       return;
     }
 
