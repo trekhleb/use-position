@@ -7,6 +7,8 @@ React hook `usePosition()` allows you to fetch client's browser geolocation and/
 
 ▶︎ [Storybook demo](https://trekhleb.github.io/use-position/) of `usePosition()` hook.
 
+![](https://repository-images.githubusercontent.com/194388894/00bf0e80-9a90-11e9-917f-aeaa68667edf)
+
 ## Installation
 
 Using `yarn`:
