@@ -2,11 +2,13 @@
 
 ## Installation
 
+Using `npm`:
+
 ```bash
 npm i use-position --save
 ```
 
-or
+Using `yarn`:
 
 ```bash
 yarn add use-position
