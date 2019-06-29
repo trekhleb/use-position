@@ -1,8 +1,9 @@
 import React from 'react';
-import { usePosition } from '../src/usePosition';
+import PropTypes from 'prop-types';
+import {usePosition} from '../src/usePosition';
 
 export const Demo = ({watch}) => {
-  const { latitude, longitude, timestamp, accuracy, error } = usePosition(watch);
+  const {latitude, longitude, timestamp, accuracy, error} = usePosition(watch);
 
   return (
     <code>
@@ -13,4 +14,8 @@ export const Demo = ({watch}) => {
       error: {error}
     </code>
   );
+};
+
+Demo.propTypes = {
+  watch: PropTypes.bool,
 };

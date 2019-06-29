@@ -36,9 +36,9 @@ export const usePosition = (watch = false) => {
     } else {
       geo.getCurrentPosition(onChange, onError, settings);
     }
-    
+
     return () => watcher && geo.clearWatch(watcher);
   }, [settings]);
 
-  return { ...position, error };
+  return {...position, error};
 };
