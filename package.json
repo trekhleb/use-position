@@ -46,6 +46,7 @@
     "eslint-config-google": "^0.13.0",
     "eslint-plugin-react": "^7.14.2",
     "gh-pages": "^2.0.1",
+    "husky": "^2.7.0",
     "jest": "^24.8.0",
     "prop-types": "^15.7.2",
     "react": "^16.8.0",
