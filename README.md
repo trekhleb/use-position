@@ -48,7 +48,7 @@ const { latitude, longitude, timestamp, accuracy, error } = usePosition(true);
 
 ### Following client location with highest accuracy
 
-In this case if browser detects geolocation change the `latitude`, `longitude` and `timestamp` values will be updated.
+The second parameter of `usePosition()` hook is [position options](https://developer.mozilla.org/en-US/docs/Web/API/PositionOptions).
 
 ```javascript
 const { latitude, longitude, timestamp, accuracy, error } = usePosition(true, {enableHighAccuracy: true});
