@@ -23,5 +23,5 @@ import { usePosition } from 'use-position';
 Fetch location from the hook:
 
 ```javascript
-const {latitude, longitude, timestamp, accuracy, error } = usePosition(watch);
+const { latitude, longitude, timestamp, accuracy, error } = usePosition(watch);
 ```
