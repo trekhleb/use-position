@@ -1,31 +1,43 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`usePosition should return empty values by default 1`] = `
-<code>
-  latitude: 
-  <br />
-  longitude: 
-  <br />
-  timestamp: 
-  <br />
-  accuracy: 
-  <br />
-  error: 
-</code>
+Array [
+  <div>
+    Trying to fetch location...
+  </div>,
+  <br />,
+  <code>
+    latitude: 
+    <br />
+    longitude: 
+    <br />
+    timestamp: 
+    <br />
+    accuracy: 
+    <br />
+    error: 
+  </code>,
+]
 `;
 
 exports[`usePosition should return empty values by default in watching mode 1`] = `
-<code>
-  latitude: 
-  <br />
-  longitude: 
-  <br />
-  timestamp: 
-  <br />
-  accuracy: 
-  <br />
-  error: 
-</code>
+Array [
+  <div>
+    Trying to fetch location...
+  </div>,
+  <br />,
+  <code>
+    latitude: 
+    <br />
+    longitude: 
+    <br />
+    timestamp: 
+    <br />
+    accuracy: 
+    <br />
+    error: 
+  </code>,
+]
 `;
 
 exports[`usePosition should return error if navigator is not supported 1`] = `

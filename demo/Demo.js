@@ -12,13 +12,16 @@ export const Demo = ({watch, settings}) => {
   } = usePosition(watch, settings);
 
   return (
-    <code>
-      latitude: {latitude}<br/>
-      longitude: {longitude}<br/>
-      timestamp: {timestamp}<br/>
-      accuracy: {accuracy && `${accuracy}m`}<br/>
-      error: {error}
-    </code>
+    <>
+      {!latitude && !error && <><div>Trying to fetch location...</div><br/></>}
+      <code>
+        latitude: {latitude}<br/>
+        longitude: {longitude}<br/>
+        timestamp: {timestamp}<br/>
+        accuracy: {accuracy && `${accuracy}m`}<br/>
+        error: {error}
+      </code>
+    </>
   );
 };
 
