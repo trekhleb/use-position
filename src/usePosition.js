@@ -38,7 +38,7 @@ export const usePosition = (watch = false, settings = defaultSettings) => {
     }
 
     return () => watcher && geo.clearWatch(watcher);
-  }, [settings]);
+  }, [settings.enableHighAccuracy, settings.timeout, settings.maximumAge]);
 
   return {...position, error};
 };
