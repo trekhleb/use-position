@@ -35,7 +35,13 @@ import { usePosition } from 'use-position';
 ### Fetching client location
 
 ```javascript
-const { latitude, longitude, timestamp, accuracy, error } = usePosition();
+const {
+  latitude,
+  longitude,
+  timestamp,
+  accuracy,
+  error,
+} = usePosition();
 ```
 
 ### Following client location
@@ -43,7 +49,14 @@ const { latitude, longitude, timestamp, accuracy, error } = usePosition();
 In this case if browser detects geolocation change the `latitude`, `longitude` and `timestamp` values will be updated.
 
 ```javascript
-const { latitude, longitude, timestamp, accuracy, error } = usePosition(true);
+const watch = true;
+const {
+  latitude,
+  longitude,
+  timestamp,
+  accuracy,
+  error,
+} = usePosition(watch);
 ```
 
 ### Following client location with highest accuracy
@@ -51,17 +64,31 @@ const { latitude, longitude, timestamp, accuracy, error } = usePosition(true);
 The second parameter of `usePosition()` hook is [position options](https://developer.mozilla.org/en-US/docs/Web/API/PositionOptions).
 
 ```javascript
-const { latitude, longitude, timestamp, accuracy, error } = usePosition(true, {enableHighAccuracy: true});
+const watch = true;
+const {
+  latitude,
+  longitude,
+  timestamp,
+  accuracy,
+  error,
+} = usePosition(watch, {enableHighAccuracy: true});
 ```
 
 ### Full example
 
 ```javascript
 import React from 'react';
-import { usePosition } from '../src/usePosition';
+import { usePosition } from 'use-position';
 
 export const Demo = () => {
-  const { latitude, longitude, timestamp, accuracy, error } = usePosition(true);
+  const watch = true;
+  const {
+    latitude,
+    longitude,
+    timestamp,
+    accuracy,
+    error,
+  } = usePosition(watch);
 
   return (
     <code>
