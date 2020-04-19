@@ -24,20 +24,19 @@ export const usePosition = (watch = false, settings = defaultSettings) => {
   };
 
   useEffect(() => {
-    const geo = navigator.geolocation;
-    if (!geo) {
+    if (!navigator || !navigator.geolocation) {
       setError('Geolocation is not supported');
       return;
     }
 
     let watcher = null;
     if (watch) {
-      watcher = geo.watchPosition(onChange, onError, settings);
+      watcher = navigator.geolocation.watchPosition(onChange, onError, settings);
     } else {
-      geo.getCurrentPosition(onChange, onError, settings);
+      navigator.geolocation.getCurrentPosition(onChange, onError, settings);
     }
 
-    return () => watcher && geo.clearWatch(watcher);
+    return () => watcher && navigator.geolocation.clearWatch(watcher);
   }, [settings.enableHighAccuracy, settings.timeout, settings.maximumAge]);
 
   return {...position, error};

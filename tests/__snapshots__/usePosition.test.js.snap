@@ -21,23 +21,18 @@ Array [
 `;
 
 exports[`usePosition should return empty values by default in watching mode 1`] = `
-Array [
-  <div>
-    Trying to fetch location...
-  </div>,
-  <br />,
-  <code>
-    latitude: 
-    <br />
-    longitude: 
-    <br />
-    timestamp: 
-    <br />
-    accuracy: 
-    <br />
-    error: 
-  </code>,
-]
+<code>
+  latitude: 
+  <br />
+  longitude: 
+  <br />
+  timestamp: 
+  <br />
+  accuracy: 
+  <br />
+  error: 
+  Geolocation is not supported
+</code>
 `;
 
 exports[`usePosition should return error if navigator is not supported 1`] = `
