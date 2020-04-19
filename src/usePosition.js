@@ -31,13 +31,18 @@ export const usePosition = (watch = false, settings = defaultSettings) => {
 
     let watcher = null;
     if (watch) {
-      watcher = navigator.geolocation.watchPosition(onChange, onError, settings);
+      watcher =
+        navigator.geolocation.watchPosition(onChange, onError, settings);
     } else {
       navigator.geolocation.getCurrentPosition(onChange, onError, settings);
     }
 
     return () => watcher && navigator.geolocation.clearWatch(watcher);
-  }, [settings.enableHighAccuracy, settings.timeout, settings.maximumAge]);
+  }, [
+    settings.enableHighAccuracy,
+    settings.timeout,
+    settings.maximumAge,
+  ]);
 
   return {...position, error};
 };

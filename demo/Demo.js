@@ -11,9 +11,16 @@ export const Demo = ({watch, settings}) => {
     error,
   } = usePosition(watch, settings);
 
+  const loader = !latitude && !error ? (
+    <>
+      <div>Trying to fetch location...</div>
+      <br/>
+    </>
+  ) : null;
+
   return (
     <>
-      {!latitude && !error && <><div>Trying to fetch location...</div><br/></>}
+      {loader}
       <code>
         latitude: {latitude}<br/>
         longitude: {longitude}<br/>
