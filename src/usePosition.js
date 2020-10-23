@@ -12,10 +12,7 @@ export const usePosition = (watch = false, settings = defaultSettings) => {
 
   const onChange = ({coords, timestamp}) => {
     setPosition({
-      latitude: coords.latitude,
-      longitude: coords.longitude,
-      accuracy: coords.accuracy,
-      speed: coords.speed,
+      ...coords,
       timestamp,
     });
   };
