@@ -15,6 +15,7 @@ export const usePosition = (watch = false, settings = defaultSettings) => {
       latitude: coords.latitude,
       longitude: coords.longitude,
       accuracy: coords.accuracy,
+      speed: coords.speed,
       timestamp,
     });
   };
