@@ -4,7 +4,7 @@
 [![npm version](https://badge.fury.io/js/use-position.svg)](https://badge.fury.io/js/use-position)
 [![codecov](https://codecov.io/gh/trekhleb/use-position/branch/master/graph/badge.svg)](https://codecov.io/gh/trekhleb/use-position)
 
-React hook `usePosition()` allows you to fetch client's browser geolocation and/or subscribe to all further geolocation changes.
+React hook `usePosition()` allows you to fetch a client's browser geolocation and/or subscribe to all further geolocation changes.
 
 ▶︎ [Storybook demo](https://trekhleb.github.io/use-position/) of `usePosition()` hook.
 
@@ -38,6 +38,7 @@ import { usePosition } from 'use-position';
 const {
   latitude,
   longitude,
+  speed,
   timestamp,
   accuracy,
   error,
@@ -53,13 +54,14 @@ const watch = true;
 const {
   latitude,
   longitude,
+  speed,
   timestamp,
   accuracy,
   error,
 } = usePosition(watch);
 ```
 
-### Following client location with highest accuracy
+### Following client location with the highest accuracy
 
 The second parameter of `usePosition()` hook is [position options](https://developer.mozilla.org/en-US/docs/Web/API/PositionOptions).
 
@@ -68,6 +70,7 @@ const watch = true;
 const {
   latitude,
   longitude,
+  speed,
   timestamp,
   accuracy,
   error,
@@ -85,6 +88,7 @@ export const Demo = () => {
   const {
     latitude,
     longitude,
+    speed,
     timestamp,
     accuracy,
     error,
@@ -94,6 +98,7 @@ export const Demo = () => {
     <code>
       latitude: {latitude}<br/>
       longitude: {longitude}<br/>
+      speed: {speed}<br/>
       timestamp: {timestamp}<br/>
       accuracy: {accuracy && `${accuracy}m`}<br/>
       error: {error}
@@ -116,6 +121,7 @@ export const Demo = () => {
 
 - `latitude: number` - latitude (i.e. `52.3172414`),
 - `longitude: number` - longitude (i.e. `4.8717809`),
+- `speed: number | null` - velocity of the device in meters per second (i.e. `2.5`),
 - `timestamp: number` - timestamp when location was detected (i.e. `1561815013194`),
 - `accuracy: number` - location accuracy in meters (i.e. `24`),
 - `error: string` - error message or `null` (i.e. `User denied Geolocation`)

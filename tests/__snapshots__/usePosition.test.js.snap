@@ -15,6 +15,8 @@ Array [
     <br />
     accuracy: 
     <br />
+    speed: 
+    <br />
     error: 
   </code>,
 ]
@@ -29,6 +31,8 @@ exports[`usePosition should return empty values by default in watching mode 1`] 
   timestamp: 
   <br />
   accuracy: 
+  <br />
+  speed: 
   <br />
   error: 
   Geolocation is not supported
@@ -45,6 +49,8 @@ exports[`usePosition should return error if navigator is not supported 1`] = `
   <br />
   accuracy: 
   <br />
+  speed: 
+  <br />
   error: 
   Geolocation is not supported
 </code>
@@ -60,6 +66,8 @@ exports[`usePosition should return error while fetching 1`] = `
   <br />
   accuracy: 
   <br />
+  speed: 
+  <br />
   error: 
   User denied Geolocation
 </code>
@@ -74,6 +82,8 @@ exports[`usePosition should return error while watching 1`] = `
   timestamp: 
   <br />
   accuracy: 
+  <br />
+  speed: 
   <br />
   error: 
   User denied Geolocation
@@ -94,6 +104,9 @@ exports[`usePosition should return latitude and longitude even if watch is undef
   accuracy: 
   24m
   <br />
+  speed: 
+  0
+  <br />
   error: 
 </code>
 `;
@@ -112,6 +125,9 @@ exports[`usePosition should return latitude and longitude while fetching 1`] = `
   accuracy: 
   24m
   <br />
+  speed: 
+  0
+  <br />
   error: 
 </code>
 `;
@@ -129,6 +145,9 @@ exports[`usePosition should return latitude and longitude while watching 1`] = `
   <br />
   accuracy: 
   24m
+  <br />
+  speed: 
+  0
   <br />
   error: 
 </code>

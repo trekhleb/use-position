@@ -7,6 +7,7 @@ const mockPosition = {
     latitude: 52.3172414,
     longitude: 4.8717809,
     accuracy: 24,
+    speed: 0,
   },
   timestamp: 1561815013194,
 };
@@ -39,7 +40,7 @@ describe('usePosition', () => {
     expect(tree).toMatchSnapshot();
   });
 
-  it('should return latitude and longitude while watching', () => {    
+  it('should return latitude and longitude while watching', () => {
     global.navigator.geolocation = mockGeolocation;
     let testRenderer;
     act(() => {
@@ -49,7 +50,7 @@ describe('usePosition', () => {
     expect(tree).toMatchSnapshot();
   });
 
-  it('should return latitude and longitude while fetching', () => {    
+  it('should return latitude and longitude while fetching', () => {
     global.navigator.geolocation = mockGeolocation;
     let testRenderer;
     act(() => {
@@ -59,7 +60,7 @@ describe('usePosition', () => {
     expect(tree).toMatchSnapshot();
   });
 
-  it('should return error while watching', () => {    
+  it('should return error while watching', () => {
     global.navigator.geolocation = mockGeolocationError;
     let testRenderer;
     act(() => {
@@ -69,7 +70,7 @@ describe('usePosition', () => {
     expect(tree).toMatchSnapshot();
   });
 
-  it('should return error while fetching', () => {    
+  it('should return error while fetching', () => {
     global.navigator.geolocation = mockGeolocationError;
     let testRenderer;
     act(() => {
@@ -80,7 +81,7 @@ describe('usePosition', () => {
   });
 
   it('should return error if navigator is not supported', () => {
-    global.navigator.geolocation = null; 
+    global.navigator.geolocation = null;
     let testRenderer;
     act(() => {
       testRenderer = renderer.create(<Demo />);
@@ -113,7 +114,7 @@ describe('usePosition', () => {
     expect(global.navigator.geolocation.clearWatch).not.toHaveBeenCalled();
   });
 
-  it('should return latitude and longitude even if watch is undefined', () => {    
+  it('should return latitude and longitude even if watch is undefined', () => {
     global.navigator.geolocation = mockGeolocation;
     let testRenderer;
     act(() => {
