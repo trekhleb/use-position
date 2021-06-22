@@ -9,6 +9,10 @@ const defaultSettings = {
 export const usePosition = (watch = false, settings = defaultSettings) => {
   const [position, setPosition] = useState({});
   const [error, setError] = useState(null);
+  
+  const value = useMemo(() => {
+    return {...position, error};
+  }, [position, error]);
 
   const onChange = ({coords, timestamp}) => {
     setPosition({
@@ -45,5 +49,5 @@ export const usePosition = (watch = false, settings = defaultSettings) => {
     settings.maximumAge,
   ]);
 
-  return {...position, error};
+  return value;
 };
