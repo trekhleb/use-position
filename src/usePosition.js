@@ -6,7 +6,12 @@ const defaultSettings = {
   maximumAge: 0,
 };
 
-export const usePosition = (watch = false, settings = defaultSettings) => {
+export const usePosition = (watch = false, settings) => {
+  const currentSetting = {
+    ...defaultSettings,
+    ...settings,
+  };
+
   const [position, setPosition] = useState({});
   const [error, setError] = useState(null);
 
@@ -30,19 +35,17 @@ export const usePosition = (watch = false, settings = defaultSettings) => {
       return;
     }
 
-    let watcher = null;
     if (watch) {
-      watcher =
-        navigator.geolocation.watchPosition(onChange, onError, settings);
-    } else {
-      navigator.geolocation.getCurrentPosition(onChange, onError, settings);
+      const watcher = (
+        navigator.geolocation.watchPosition(onChange, onError, currentSetting));
+      return () => navigator.geolocation.clearWatch(watcher);
     }
 
-    return () => watcher && navigator.geolocation.clearWatch(watcher);
+    navigator.geolocation.getCurrentPosition(onChange, onError, currentSetting);
   }, [
-    settings.enableHighAccuracy,
-    settings.timeout,
-    settings.maximumAge,
+    currentSetting.enableHighAccuracy,
+    currentSetting.timeout,
+    currentSetting.maximumAge,
   ]);
 
   return {...position, error};
