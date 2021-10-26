@@ -1,6 +1,5 @@
 # React hook for following a browser geolocation
 
-[![Build Status](https://travis-ci.org/trekhleb/use-position.svg?branch=master)](https://travis-ci.org/trekhleb/use-position)
 [![npm version](https://badge.fury.io/js/use-position.svg)](https://badge.fury.io/js/use-position)
 [![codecov](https://codecov.io/gh/trekhleb/use-position/branch/master/graph/badge.svg)](https://codecov.io/gh/trekhleb/use-position)
 
