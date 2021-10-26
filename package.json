@@ -1,6 +1,6 @@
 {
   "name": "use-position",
-  "version": "0.0.8",
+  "version": "1.0.0",
   "description": "React hook for fetching and following browser location",
   "main": "dist/usePosition.min.js",
   "scripts": {
