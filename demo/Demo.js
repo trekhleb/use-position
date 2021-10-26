@@ -9,6 +9,7 @@ export const Demo = ({watch, settings}) => {
     timestamp,
     accuracy,
     speed,
+    heading,
     error,
   } = usePosition(watch, settings);
 
@@ -26,8 +27,9 @@ export const Demo = ({watch, settings}) => {
         latitude: {latitude}<br/>
         longitude: {longitude}<br/>
         timestamp: {timestamp}<br/>
-        accuracy: {accuracy && `${accuracy}m`}<br/>
+        accuracy: {accuracy && `${accuracy} meters`}<br/>
         speed: {speed}<br/>
+        heading: {heading && `${heading} degrees`}<br/>
         error: {error}
       </code>
     </>

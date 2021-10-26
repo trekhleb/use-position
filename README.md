@@ -77,7 +77,7 @@ const {
   accuracy,
   heading,
   error,
-} = usePosition(watch, {enableHighAccuracy: true});
+} = usePosition(watch, { enableHighAccuracy: true });
 ```
 
 ### Full example
@@ -104,8 +104,8 @@ export const Demo = () => {
       longitude: {longitude}<br/>
       speed: {speed}<br/>
       timestamp: {timestamp}<br/>
-      accuracy: {accuracy && `${accuracy}m`}<br/>
-      heading: {heading && `${heading} degree`}<br/>
+      accuracy: {accuracy && `${accuracy} meters`}<br/>
+      heading: {heading && `${heading} degrees`}<br/>
       error: {error}
     </code>
   );
@@ -129,5 +129,5 @@ export const Demo = () => {
 - `speed: number | null` - velocity of the device in meters per second (i.e. `2.5`),
 - `timestamp: number` - timestamp when location was detected (i.e. `1561815013194`),
 - `accuracy: number` - location accuracy in meters (i.e. `24`),
-- `heading: number | null` - this value, specified in degrees, indicates how far off from heading due north the device is
+- `heading: number | null` - direction in which the device is traveling, in degrees (`0` degrees - north, `90` degrees - east, `270` degrees - west, and so on),
 - `error: string` - error message or `null` (i.e. `User denied Geolocation`)

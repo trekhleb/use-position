@@ -7,6 +7,7 @@ const mockPosition = {
     latitude: 52.3172414,
     longitude: 4.8717809,
     accuracy: 24,
+    heading: 90,
     speed: 0,
   },
   timestamp: 1561815013194,
