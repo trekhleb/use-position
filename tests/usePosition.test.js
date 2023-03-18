@@ -124,4 +124,22 @@ describe('usePosition', () => {
     const tree = testRenderer.toJSON();
     expect(tree).toMatchSnapshot();
   });
+
+  it('should not call geolocation when skipped', () => {
+    global.navigator.geolocation = {
+      watchPosition: jest.fn(),
+      getCurrentPosition: jest.fn(),
+      clearWatch: jest.fn(),
+    };
+
+    let testRenderer;
+    act(() => {
+      testRenderer = renderer.create(<Demo skip />);
+    });
+    const tree = testRenderer.toJSON();
+    expect(tree).toMatchSnapshot();
+
+    expect(global.navigator.geolocation.watchPosition).not.toHaveBeenCalled();
+    expect(global.navigator.geolocation.getCurrentPosition).not.toHaveBeenCalled();
+  });
 });

@@ -1,5 +1,29 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`usePosition should not call geolocation when skipped 1`] = `
+Array [
+  <div>
+    Trying to fetch location...
+  </div>,
+  <br />,
+  <code>
+    latitude: 
+    <br />
+    longitude: 
+    <br />
+    timestamp: 
+    <br />
+    accuracy: 
+    <br />
+    speed: 
+    <br />
+    heading: 
+    <br />
+    error: 
+  </code>,
+]
+`;
+
 exports[`usePosition should return empty values by default 1`] = `
 Array [
   <div>
