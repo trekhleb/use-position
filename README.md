@@ -120,6 +120,7 @@ export const Demo = () => {
   - `settings.enableHighAccuracy` - indicates the application would like to receive the most accurate results (default `false`),
   - `settings.timeout` - maximum length of time (in milliseconds) the device is allowed to take in order to return a position (default `Infinity`),
   - `settings.maximumAge` - the maximum age in milliseconds of a possible cached position that is acceptable to return (default `0`).
+- `skip: boolean` - set it to `true` to skip retrieving location.
 
 ### `usePosition()` output
 

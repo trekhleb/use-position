@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import {usePosition} from '../src/usePosition';
 
-export const Demo = ({watch, settings}) => {
+export const Demo = ({watch, settings, skip}) => {
   const {
     latitude,
     longitude,
@@ -11,7 +11,7 @@ export const Demo = ({watch, settings}) => {
     speed,
     heading,
     error,
-  } = usePosition(watch, settings);
+  } = usePosition(watch, settings, skip);
 
   const loader = !latitude && !error ? (
     <>
@@ -39,4 +39,5 @@ export const Demo = ({watch, settings}) => {
 Demo.propTypes = {
   watch: PropTypes.bool,
   settings: PropTypes.object,
+  skip: PropTypes.bool,
 };

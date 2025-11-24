@@ -6,7 +6,7 @@ const defaultSettings = {
   maximumAge: 0,
 };
 
-export const usePosition = (watch = false, userSettings = {}) => {
+export const usePosition = (watch = false, userSettings = {}, skip = false) => {
   const settings = {
     ...defaultSettings,
     ...userSettings,
@@ -31,6 +31,10 @@ export const usePosition = (watch = false, userSettings = {}) => {
   };
 
   useEffect(() => {
+    if (skip) {
+      return;
+    }
+
     if (!navigator || !navigator.geolocation) {
       setError('Geolocation is not supported');
       return;
@@ -44,9 +48,11 @@ export const usePosition = (watch = false, userSettings = {}) => {
 
     navigator.geolocation.getCurrentPosition(onChange, onError, settings);
   }, [
+    watch,
     settings.enableHighAccuracy,
     settings.timeout,
     settings.maximumAge,
+    skip,
   ]);
 
   return {...position, error};
